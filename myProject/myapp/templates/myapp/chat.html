@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bhuwan's Chat</title>
+    <link rel="stylesheet" href="{% static 'myapp/chat.css' %}">
+</head>
+<body>
+    <h1>Bhuwan's Chat</h1>
+    <a href="{% url 'about' %}">About Us</a>
+
+    <form method="POST">
+        {% csrf_token %}
+        <label for="prompt">Ask something:</label>
+        <input type="text" id="prompt" name="prompt" placeholder="Type your question..." autocomplete="off" required>
+        <button type="submit">Send</button>
+    </form>
+
+    {% if last_prompt %}
+        <div class="user-box">
+            <strong>You asked:</strong>
+            <p>{{ last_prompt }}</p>
+        </div>
+    {% endif %}
+
+    {% if answer %}
+        <div class="answer-box">
+            <strong>AI Answer:</strong>
+            <p>{{ answer }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>

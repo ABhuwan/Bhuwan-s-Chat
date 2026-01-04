@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT</title>
+    <link rel="stylesheet" href="{% static 'myapp/about.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>About</h1>
+        <p class="about-text">
+            <span>This is me, Bhuwan Adhikari.</span> This project is a Django-based chatbot application that uses the
+            Mistral AI model running locally via Ollama. The web interface is built with Django and HTML forms to collect
+            user input, while the backend uses the requests library to communicate with Ollama’s local API and generate
+            AI responses.
+            <br><br>
+            The chatbot runs fully offline, ensuring fast responses, data privacy, and no internet dependency. The
+            system is modular and easy to extend with features like chat history, authentication, or domain-specific
+            intelligence in the future.
+        </p>
+    </div>
+</body>
+
+</html>
